@@ -3,8 +3,6 @@ package com.detroitlabs.comicview.model;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.awt.*;
-
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Character {
 
@@ -16,13 +14,13 @@ public class Character {
     private String date_last_updated;
     private String deck;
     private String description;
-    private FirstAppearedInModel firstAppearedIn;
+    private FirstAppearedIn firstAppearedIn;
     private int gender;
     private int id;
-    private ImagesModel images;
+    private Images images;
     private String name;
-    //private Origin origin;
-    //private Publisher publisher;
+    private Origin origin;
+    private Publisher publisher;
     private String real_name;
     private String site_detail_url;
 
@@ -37,13 +35,13 @@ public class Character {
                 ", date_last_updated='" + date_last_updated + '\'' +
                 ", deck='" + deck + '\'' +
                 ", description='" + description + '\'' +
-               // ", firstAppearedIn=" + firstAppearedIn +
+                ", firstAppearedIn=" + firstAppearedIn +
                 ", gender=" + gender +
                 ", id=" + id +
-               // ", images=" + images +
+                ", images=" + images +
                 ", name='" + name + '\'' +
-               // ", origin=" + origin +
-               // ", publisher=" + publisher +
+                ", origin=" + origin +
+                ", publisher=" + publisher +
                 ", real_name='" + real_name + '\'' +
                 ", site_detail_url='" + site_detail_url + '\'' +
                 '}';
@@ -130,12 +128,12 @@ public class Character {
     }
 
     @JsonProperty("first_appeared_in_issue")
-    public FirstAppearedInModel getFirstAppearedIn() {
+    public FirstAppearedIn getFirstAppearedIn() {
         return firstAppearedIn;
     }
 
     @JsonProperty("first_appeared_in_issue")
-    public void setFirstAppearedIn(FirstAppearedInModel firstAppearedIn) {
+    public void setFirstAppearedIn(FirstAppearedIn firstAppearedIn) {
         this.firstAppearedIn = firstAppearedIn;
     }
 
@@ -160,12 +158,12 @@ public class Character {
     }
 
     @JsonProperty("image")
-    public ImagesModel getImages() {
+    public Images getImages() {
         return images;
     }
 
     @JsonProperty("image")
-    public void setImages(ImagesModel images) {
+    public void setImages(Images images) {
         this.images = images;
     }
 
@@ -179,25 +177,25 @@ public class Character {
         this.name = name;
     }
 
-//    @JsonProperty("origin")
-//    public Origin getOrigin() {
-//        return origin;
-//    }
-//
-//    @JsonProperty("origin")
-//    public void setOrigin(Origin origin) {
-//        this.origin = origin;
-//    }
-//
-//    @JsonProperty("publisher")
-//    public Publisher getPublisher() {
-//        return publisher;
-//    }
-//
-//    @JsonProperty("publisher")
-//    public void setPublisher(Publisher publisher) {
-//        this.publisher = publisher;
-//    }
+    @JsonProperty("origin")
+    public Origin getOrigin() {
+        return origin;
+    }
+
+    @JsonProperty("origin")
+    public void setOrigin(Origin origin) {
+        this.origin = origin;
+    }
+
+    @JsonProperty("publisher")
+    public Publisher getPublisher() {
+        return publisher;
+    }
+
+    @JsonProperty("publisher")
+    public void setPublisher(Publisher publisher) {
+        this.publisher = publisher;
+    }
 
     @JsonProperty("real_name")
     public String getReal_name() {
