@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class FirstAppearedInModel {
+public class FirstAppearedIn {
 
     private String api_detail_url;
     private int id;
@@ -13,7 +13,7 @@ public class FirstAppearedInModel {
 
     @Override
     public String toString() {
-        return "FirstAppearedInModel{" +
+        return "FirstAppearedIn{" +
                 "api_detail_url='" + api_detail_url + '\'' +
                 ", id=" + id +
                 ", name='" + name + '\'' +
