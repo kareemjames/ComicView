@@ -19,12 +19,12 @@ public class ComicController {
     @Autowired
     ComicService comicService;
 
-    @ResponseBody
     @RequestMapping("/")
-    public String displayAllCharacters() {
+    public String displayAllCharacters(ModelMap modelMap) {
         ComicWrapper cw = comicService.fetchAllData();
         List<Character> allCharacters = cw.getResults();
-        return allCharacters.toString();
+        modelMap.put("allCharacters", allCharacters);
+        return "index";
     }
 
     @RequestMapping("search")
