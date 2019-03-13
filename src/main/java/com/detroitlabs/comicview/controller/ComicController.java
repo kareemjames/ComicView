@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -29,10 +30,20 @@ public class ComicController {
 
     @ResponseBody
     @RequestMapping("/")
-    public String displayAllCharacters() {
+    public String displayAllCharacters(ModelMap modelMap) {
         ComicWrapper cw = comicService.fetchAllData();
         List<Character> allCharacters = cw.getResults();
-        return allCharacters.toString();
+        modelMap.put("allCharacters", allCharacters);
+        return "index";
+    }
+
+    @RequestMapping("search")
+    public String searchByCharacterName(@RequestParam("q") String searchValue, ModelMap modelMap) {
+        comicService.setSearchName(searchValue);
+        ComicWrapper cw = comicService.fetchbyName();
+        List<Character> allCharacters = cw.getResults();
+        modelMap.put("allCharacters", allCharacters);
+        return"index";
     }
 
     @RequestMapping("/character")
