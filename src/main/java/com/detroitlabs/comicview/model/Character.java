@@ -3,6 +3,8 @@ package com.detroitlabs.comicview.model;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.awt.*;
+
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Character {
 
@@ -14,10 +16,10 @@ public class Character {
     private String date_last_updated;
     private String deck;
     private String description;
-    //private FirstAppearedIn firstAppearedIn;
+    private FirstAppearedInModel firstAppearedIn;
     private int gender;
     private int id;
-    //private Images images;
+    private ImagesModel images;
     private String name;
     //private Origin origin;
     //private Publisher publisher;
@@ -127,15 +129,15 @@ public class Character {
         this.description = description;
     }
 
-//    @JsonProperty("first_appeared_in_issue")
-//    public FirstAppearedIn getFirstAppearedIn() {
-//        return firstAppearedIn;
-//    }
-//
-//    @JsonProperty("first_appeared_in_issue")
-//    public void setFirstAppearedIn(FirstAppearedIn firstAppearedIn) {
-//        this.firstAppearedIn = firstAppearedIn;
-//    }
+    @JsonProperty("first_appeared_in_issue")
+    public FirstAppearedInModel getFirstAppearedIn() {
+        return firstAppearedIn;
+    }
+
+    @JsonProperty("first_appeared_in_issue")
+    public void setFirstAppearedIn(FirstAppearedInModel firstAppearedIn) {
+        this.firstAppearedIn = firstAppearedIn;
+    }
 
     @JsonProperty("gender")
     public int getGender() {
@@ -157,15 +159,15 @@ public class Character {
         this.id = id;
     }
 
-//    @JsonProperty("image")
-//    public Images getImages() {
-//        return images;
-//    }
-//
-//    @JsonProperty("image")
-//    public void setImages(Images images) {
-//        this.images = images;
-//    }
+    @JsonProperty("image")
+    public ImagesModel getImages() {
+        return images;
+    }
+
+    @JsonProperty("image")
+    public void setImages(ImagesModel images) {
+        this.images = images;
+    }
 
     @JsonProperty("name")
     public String getName() {

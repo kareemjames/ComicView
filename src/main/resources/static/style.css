@@ -2714,3 +2714,14 @@ table.cart .fa-times {
   background-color: white;
   color: #898e90;
 }
+
+.thumb {
+  width:200px;
+  height:200px;
+  object-fit:scale-down;
+}
+
+.inner-product {
+  width: 275px;
+  height: 500px;
+}
