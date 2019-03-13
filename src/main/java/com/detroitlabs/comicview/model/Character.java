@@ -14,13 +14,13 @@ public class Character {
     private String date_last_updated;
     private String deck;
     private String description;
-    //private FirstAppearedIn firstAppearedIn;
+    private FirstAppearedIn firstAppearedIn;
     private int gender;
     private int id;
-    //private Images images;
+    private Images images;
     private String name;
-    //private Origin origin;
-    //private Publisher publisher;
+    private Origin origin;
+    private Publisher publisher;
     private String real_name;
     private String site_detail_url;
 
@@ -35,13 +35,13 @@ public class Character {
                 ", date_last_updated='" + date_last_updated + '\'' +
                 ", deck='" + deck + '\'' +
                 ", description='" + description + '\'' +
-               // ", firstAppearedIn=" + firstAppearedIn +
+                ", firstAppearedIn=" + firstAppearedIn +
                 ", gender=" + gender +
                 ", id=" + id +
-               // ", images=" + images +
+                ", images=" + images +
                 ", name='" + name + '\'' +
-               // ", origin=" + origin +
-               // ", publisher=" + publisher +
+                ", origin=" + origin +
+                ", publisher=" + publisher +
                 ", real_name='" + real_name + '\'' +
                 ", site_detail_url='" + site_detail_url + '\'' +
                 '}';
@@ -127,15 +127,15 @@ public class Character {
         this.description = description;
     }
 
-//    @JsonProperty("first_appeared_in_issue")
-//    public FirstAppearedIn getFirstAppearedIn() {
-//        return firstAppearedIn;
-//    }
-//
-//    @JsonProperty("first_appeared_in_issue")
-//    public void setFirstAppearedIn(FirstAppearedIn firstAppearedIn) {
-//        this.firstAppearedIn = firstAppearedIn;
-//    }
+    @JsonProperty("first_appeared_in_issue")
+    public FirstAppearedIn getFirstAppearedIn() {
+        return firstAppearedIn;
+    }
+
+    @JsonProperty("first_appeared_in_issue")
+    public void setFirstAppearedIn(FirstAppearedIn firstAppearedIn) {
+        this.firstAppearedIn = firstAppearedIn;
+    }
 
     @JsonProperty("gender")
     public int getGender() {
@@ -157,15 +157,15 @@ public class Character {
         this.id = id;
     }
 
-//    @JsonProperty("image")
-//    public Images getImages() {
-//        return images;
-//    }
-//
-//    @JsonProperty("image")
-//    public void setImages(Images images) {
-//        this.images = images;
-//    }
+    @JsonProperty("image")
+    public Images getImages() {
+        return images;
+    }
+
+    @JsonProperty("image")
+    public void setImages(Images images) {
+        this.images = images;
+    }
 
     @JsonProperty("name")
     public String getName() {
@@ -177,25 +177,25 @@ public class Character {
         this.name = name;
     }
 
-//    @JsonProperty("origin")
-//    public Origin getOrigin() {
-//        return origin;
-//    }
-//
-//    @JsonProperty("origin")
-//    public void setOrigin(Origin origin) {
-//        this.origin = origin;
-//    }
-//
-//    @JsonProperty("publisher")
-//    public Publisher getPublisher() {
-//        return publisher;
-//    }
-//
-//    @JsonProperty("publisher")
-//    public void setPublisher(Publisher publisher) {
-//        this.publisher = publisher;
-//    }
+    @JsonProperty("origin")
+    public Origin getOrigin() {
+        return origin;
+    }
+
+    @JsonProperty("origin")
+    public void setOrigin(Origin origin) {
+        this.origin = origin;
+    }
+
+    @JsonProperty("publisher")
+    public Publisher getPublisher() {
+        return publisher;
+    }
+
+    @JsonProperty("publisher")
+    public void setPublisher(Publisher publisher) {
+        this.publisher = publisher;
+    }
 
     @JsonProperty("real_name")
     public String getReal_name() {
