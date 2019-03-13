@@ -24,12 +24,13 @@ public class ComicService {
         return response.getBody();
     }
 
-    public ComicWrapper fetchCharacterData(){
+    public ComicWrapper fetchSingleCharacterById(){
         RestTemplate restTemplate = new RestTemplate();
         HttpHeaders headers = new HttpHeaders();
         headers.add("user-agent", "spring");
         HttpEntity entity = new HttpEntity(headers);
-        String fetchAllCharactersUrl = "https://comicvine.gamespot.com/api/character" + searchCharacter + "?api_key=b51063865068ff4df9ab54f6c8b0282c8c9705c8&format=json";
+       // String fetchAllCharactersUrl = "https://comicvine.gamespot.com/api/character" + searchCharacter + "?api_key=b51063865068ff4df9ab54f6c8b0282c8c9705c8&format=json";
+        String fetchAllCharactersUrl = "https://www.comicvine.com/api/character/4005-1269/?api_key=b51063865068ff4df9ab54f6c8b0282c8c9705c8&format=json";
         ResponseEntity<ComicWrapper> response = restTemplate.exchange(fetchAllCharactersUrl, HttpMethod.GET, entity, ComicWrapper.class);
         return response.getBody();
     }

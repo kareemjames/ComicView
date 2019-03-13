@@ -31,12 +31,11 @@ public class ComicController {
         return allCharacters.toString();
     }
 
-    @RequestMapping("")
-    public String searchByCharacter(@RequestParam("q") String searchValue, ModelMap modelMap) {
-        comicService.setSearchCharacter(searchValue);
-        ComicWrapper comicWrapper = comicService.fetchCharacterData();
+    @RequestMapping("/character")
+    @ResponseBody
+    public String searchByCharacter() {
+        ComicWrapper comicWrapper = comicService.fetchSingleCharacterById();
         List<Character> searchCharacter = comicWrapper.getResults();
-        modelMap.put("searchCharacter", searchCharacter);
         return "index";
     }
 
