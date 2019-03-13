@@ -1,6 +1,7 @@
 package com.detroitlabs.comicview.controller;
 
 import com.detroitlabs.comicview.model.Character;
+import com.detroitlabs.comicview.model.CharacterWrapper;
 import com.detroitlabs.comicview.model.ComicWrapper;
 import com.detroitlabs.comicview.model.Results;
 import com.detroitlabs.comicview.service.ComicService;
@@ -22,6 +23,9 @@ public class ComicController {
     @Autowired
     Results results;
 
+    @Autowired
+    CharacterWrapper characterWrapper;
+
 
     @ResponseBody
     @RequestMapping("/")
@@ -34,9 +38,9 @@ public class ComicController {
     @RequestMapping("/character")
     @ResponseBody
     public String searchByCharacter() {
-        ComicWrapper comicWrapper = comicService.fetchSingleCharacterById();
-        List<Character> searchCharacter = comicWrapper.getResults();
-        return "index";
+        CharacterWrapper characterWrapper = comicService.fetchSingleCharacterById();
+        Results searchCharacter = characterWrapper.getResults();
+        return searchCharacter.toString();
     }
 
 

@@ -2,13 +2,15 @@ package com.detroitlabs.comicview.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
+@Component
 public class CharacterWrapper {
 
-    private String results;
+    private Results results;
 
     @Override
     public String toString() {
@@ -18,12 +20,12 @@ public class CharacterWrapper {
     }
 
     @JsonProperty("results")
-    public String getResults() {
+    public Results getResults() {
         return results;
     }
 
     @JsonProperty("results")
-    public void setResults(String results) {
+    public void setResults(Results results) {
         this.results = results;
     }
 
