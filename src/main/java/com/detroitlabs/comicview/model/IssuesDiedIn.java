@@ -2,7 +2,7 @@ package com.detroitlabs.comicview.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class characterEnemies {
+public class IssuesDiedIn {
 
     private String apiDetailsUrl;
     private String id;

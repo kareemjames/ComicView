@@ -2,21 +2,21 @@ package com.detroitlabs.comicview.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class characterEnemies {
+public class IssueCredits {
 
-    private String apiDetailsUrl;
+    private String apiDetailUrl;
     private String id;
     private String name;
     private String siteDetailUrl;
 
     @JsonProperty("api_detail_url")
-    public String getApiDetailsUrl() {
-        return apiDetailsUrl;
+    public String getApiDetailUrl() {
+        return apiDetailUrl;
     }
 
     @JsonProperty("api_detail_url")
-    public void setApiDetailsUrl(String apiDetailsUrl) {
-        this.apiDetailsUrl = apiDetailsUrl;
+    public void setApiDetailUrl(String apiDetailUrl) {
+        this.apiDetailUrl = apiDetailUrl;
     }
 
     @JsonProperty("id")
@@ -51,8 +51,8 @@ public class characterEnemies {
 
     @Override
     public String toString() {
-        return "characterEnemies{" +
-                "apiDetailsUrl='" + apiDetailsUrl + '\'' +
+        return "IssueCredits{" +
+                "apiDetailUrl='" + apiDetailUrl + '\'' +
                 ", id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", siteDetailUrl='" + siteDetailUrl + '\'' +

@@ -2,12 +2,10 @@ package com.detroitlabs.comicview.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class characterEnemies {
-
+public class Publisher {
     private String apiDetailsUrl;
     private String id;
     private String name;
-    private String siteDetailUrl;
 
     @JsonProperty("api_detail_url")
     public String getApiDetailsUrl() {
@@ -39,23 +37,12 @@ public class characterEnemies {
         this.name = name;
     }
 
-    @JsonProperty("site_detail_url")
-    public String getSiteDetailUrl() {
-        return siteDetailUrl;
-    }
-
-    @JsonProperty("site_detail_url")
-    public void setSiteDetailUrl(String siteDetailUrl) {
-        this.siteDetailUrl = siteDetailUrl;
-    }
-
     @Override
     public String toString() {
-        return "characterEnemies{" +
+        return "Origin{" +
                 "apiDetailsUrl='" + apiDetailsUrl + '\'' +
                 ", id='" + id + '\'' +
                 ", name='" + name + '\'' +
-                ", siteDetailUrl='" + siteDetailUrl + '\'' +
                 '}';
     }
 }
