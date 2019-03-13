@@ -19,8 +19,8 @@ public class Character {
     private int id;
     //private Images images;
     private String name;
-    //private Origin origin;
-    //private Publisher publisher;
+    //private CharacterOrigin origin;
+    //private CharacterPublisher publisher;
     private String real_name;
     private String site_detail_url;
 
@@ -178,22 +178,22 @@ public class Character {
     }
 
 //    @JsonProperty("origin")
-//    public Origin getOrigin() {
+//    public CharacterOrigin getOrigin() {
 //        return origin;
 //    }
 //
 //    @JsonProperty("origin")
-//    public void setOrigin(Origin origin) {
+//    public void setOrigin(CharacterOrigin origin) {
 //        this.origin = origin;
 //    }
 //
 //    @JsonProperty("publisher")
-//    public Publisher getPublisher() {
+//    public CharacterPublisher getPublisher() {
 //        return publisher;
 //    }
 //
 //    @JsonProperty("publisher")
-//    public void setPublisher(Publisher publisher) {
+//    public void setPublisher(CharacterPublisher publisher) {
 //        this.publisher = publisher;
 //    }
 

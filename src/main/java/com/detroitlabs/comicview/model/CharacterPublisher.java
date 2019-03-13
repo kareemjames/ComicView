@@ -2,8 +2,7 @@ package com.detroitlabs.comicview.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class Origin {
-
+public class CharacterPublisher {
     private String apiDetailsUrl;
     private String id;
     private String name;
@@ -40,7 +39,7 @@ public class Origin {
 
     @Override
     public String toString() {
-        return "Origin{" +
+        return "CharacterOrigin{" +
                 "apiDetailsUrl='" + apiDetailsUrl + '\'' +
                 ", id='" + id + '\'' +
                 ", name='" + name + '\'' +

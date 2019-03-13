@@ -39,7 +39,7 @@ public class Powers {
 
     @Override
     public String toString() {
-        return "Origin{" +
+        return "CharacterOrigin{" +
                 "apiDetailsUrl='" + apiDetailsUrl + '\'' +
                 ", id='" + id + '\'' +
                 ", name='" + name + '\'' +
