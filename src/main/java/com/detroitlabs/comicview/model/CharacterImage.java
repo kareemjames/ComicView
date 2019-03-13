@@ -2,7 +2,7 @@ package com.detroitlabs.comicview.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class characterImage {
+public class CharacterImage {
 
     private String iconUrl;
     private String mediumUrl;
@@ -117,7 +117,7 @@ public class characterImage {
 
     @Override
     public String toString() {
-        return "characterImage{" +
+        return "CharacterImage{" +
                 "iconUrl='" + iconUrl + '\'' +
                 ", mediumUrl='" + mediumUrl + '\'' +
                 ", screenUrl='" + screenUrl + '\'' +

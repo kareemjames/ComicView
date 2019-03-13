@@ -51,7 +51,7 @@ public class IssuesDiedIn {
 
     @Override
     public String toString() {
-        return "characterEnemies{" +
+        return "CharacterEnemies{" +
                 "apiDetailsUrl='" + apiDetailsUrl + '\'' +
                 ", id='" + id + '\'' +
                 ", name='" + name + '\'' +

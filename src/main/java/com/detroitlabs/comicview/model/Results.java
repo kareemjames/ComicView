@@ -9,7 +9,7 @@ public class Results {
     private String aliases;
     private String apiDetailsUrl;
     private String birth;
-   // private String characterEnemies;
+   // private String CharacterEnemies;
     private String CharacterFriends;
    // private String creators;
     private String deck;

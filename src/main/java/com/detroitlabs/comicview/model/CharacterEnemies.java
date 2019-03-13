@@ -2,7 +2,7 @@ package com.detroitlabs.comicview.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class characterEnemies {
+public class CharacterEnemies {
 
     private String apiDetailsUrl;
     private String id;
@@ -51,7 +51,7 @@ public class characterEnemies {
 
     @Override
     public String toString() {
-        return "characterEnemies{" +
+        return "CharacterEnemies{" +
                 "apiDetailsUrl='" + apiDetailsUrl + '\'' +
                 ", id='" + id + '\'' +
                 ", name='" + name + '\'' +
