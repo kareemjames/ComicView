@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ImageModel {
+public class ImagesModel {
 
      private String icon_url;
      private String medium_url;
@@ -19,7 +19,7 @@ public class ImageModel {
 
     @Override
     public String toString() {
-        return "ImageModel{" +
+        return "ImagesModel{" +
                 "icon_url='" + icon_url + '\'' +
                 ", medium_url='" + medium_url + '\'' +
                 ", screen_url='" + screen_url + '\'' +
