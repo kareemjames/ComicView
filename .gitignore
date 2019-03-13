@@ -129,4 +129,7 @@ gradle-app.setting
 ### Gradle Patch ###
 **/build/
 
+### Personal ###
+src/main/resources/comic-template
+
 # End of https://www.gitignore.io/api/osx,gradle,intellij
