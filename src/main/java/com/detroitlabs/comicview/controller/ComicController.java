@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @Controller
@@ -28,12 +29,19 @@ public class ComicController {
     CharacterWrapper characterWrapper;
 
 
-    @ResponseBody
     @RequestMapping("/")
     public String displayAllCharacters(ModelMap modelMap) {
         ComicWrapper cw = comicService.fetchAllData();
         List<Character> allCharacters = cw.getResults();
+        Collections.shuffle(allCharacters);
         modelMap.put("allCharacters", allCharacters);
+
+        List<Character> carousel = new ArrayList<>();
+        for (int i = 0; i <= 2; i++) {
+            carousel.add(allCharacters.get(i));
+        }
+        modelMap.put("carousel", carousel);
+
         return "index";
     }
 
@@ -43,6 +51,17 @@ public class ComicController {
         ComicWrapper cw = comicService.fetchbyName();
         List<Character> allCharacters = cw.getResults();
         modelMap.put("allCharacters", allCharacters);
+
+        List<Character> carousel = new ArrayList<>();
+        for (int i = 0; i <= 2; i++) {
+            if (allCharacters.size() == 1) {
+                carousel.add(allCharacters.get(0));
+            } else {
+                carousel.add(allCharacters.get(i));
+            }
+        }
+        modelMap.put("carousel", carousel);
+
         return"index";
     }
 
