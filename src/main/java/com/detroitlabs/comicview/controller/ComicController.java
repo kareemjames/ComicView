@@ -27,8 +27,6 @@ public class ComicController {
     @Autowired
     CharacterWrapper characterWrapper;
 
-
-    @ResponseBody
     @RequestMapping("/")
     public String displayAllCharacters(ModelMap modelMap) {
         ComicWrapper cw = comicService.fetchAllData();
