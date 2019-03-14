@@ -3,6 +3,7 @@ package com.detroitlabs.comicview.service;
 import com.detroitlabs.comicview.model.Character;
 import com.detroitlabs.comicview.model.CharacterWrapper;
 import com.detroitlabs.comicview.model.ComicWrapper;
+import com.detroitlabs.comicview.model.IssueWrapper;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -53,6 +54,16 @@ public class ComicService {
         HttpEntity entity = new HttpEntity(headers);
         String fetchCharacterByName = "https://www.comicvine.com/api/characters?api_key=b51063865068ff4df9ab54f6c8b0282c8c9705c8&filter=name:" + searchName + "&format=json&limit=25";
         ResponseEntity<ComicWrapper> response = restTemplate.exchange(fetchCharacterByName, HttpMethod.GET, entity, ComicWrapper.class);
+        return response.getBody();
+    }
+
+    public IssueWrapper DisplayByIssue(){
+        RestTemplate restTemplate = new RestTemplate();
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("user-agent", "spring");
+        HttpEntity entity = new HttpEntity(headers);
+        String displayIssueById = "https://comicvine.com/api/issue/4000-13453/?api_key=b51063865068ff4df9ab54f6c8b0282c8c9705c8&format=json";
+        ResponseEntity<IssueWrapper> response = restTemplate.exchange(displayIssueById, HttpMethod.GET, entity, IssueWrapper.class);
         return response.getBody();
     }
 

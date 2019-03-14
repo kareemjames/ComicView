@@ -1,9 +1,7 @@
 package com.detroitlabs.comicview.controller;
 
+import com.detroitlabs.comicview.model.*;
 import com.detroitlabs.comicview.model.Character;
-import com.detroitlabs.comicview.model.CharacterWrapper;
-import com.detroitlabs.comicview.model.ComicWrapper;
-import com.detroitlabs.comicview.model.Results;
 import com.detroitlabs.comicview.service.ComicService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.xml.ws.RequestWrapper;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,12 +22,16 @@ public class ComicController {
 
     @Autowired
     Results results;
+    @Autowired
+    IssueResults issueResults;
 
     @Autowired
     CharacterWrapper characterWrapper;
+    @Autowired
+    IssueImage issueImage;
 
 
-    @ResponseBody
+
     @RequestMapping("/")
     public String displayAllCharacters(ModelMap modelMap) {
         ComicWrapper cw = comicService.fetchAllData();
@@ -52,6 +55,14 @@ public class ComicController {
         CharacterWrapper characterWrapper = comicService.fetchSingleCharacterById();
         Results searchCharacter = characterWrapper.getResults();
         return searchCharacter.toString();
+    }
+
+    @RequestMapping("/issues")
+    @ResponseBody
+    public String displayIssueById(){
+        IssueWrapper issueWrapper = comicService.DisplayByIssue();
+        Results results = issueWrapper.getResults();
+return results.toString();
     }
 
 
