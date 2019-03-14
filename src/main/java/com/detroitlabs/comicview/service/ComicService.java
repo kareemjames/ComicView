@@ -23,7 +23,7 @@ public class ComicService {
         HttpHeaders headers = new HttpHeaders();
         headers.add("user-agent", "spring");
         HttpEntity entity = new HttpEntity(headers);
-        String fetchAllCharactersUrl = "https://www.comicvine.com/api/characters?api_key=b51063865068ff4df9ab54f6c8b0282c8c9705c8&format=json&limit=25";
+        String fetchAllCharactersUrl = "https://www.comicvine.com/api/characters?api_key=b51063865068ff4df9ab54f6c8b0282c8c9705c8&format=json&limit=28";
         ResponseEntity<ComicWrapper> response = restTemplate.exchange(fetchAllCharactersUrl, HttpMethod.GET, entity, ComicWrapper.class);
         return response.getBody();
     }
