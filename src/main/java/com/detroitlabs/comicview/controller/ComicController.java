@@ -24,6 +24,8 @@ public class ComicController {
 
     @Autowired
     Results results;
+    @Autowired
+    IssueResults issueResults;
 
     @Autowired
     CharacterWrapper characterWrapper;
@@ -44,6 +46,15 @@ public class ComicController {
 
         return "index";
     }
+
+    @RequestMapping("/allissues")
+@ResponseBody
+    public String displayAllIssues(){
+        IssuesWrapper issuesWrapper = comicService.DisplayAllIssueData();
+        List<IssueResults> allIssues = issuesWrapper.getResults();
+        return allIssues.toString();
+    }
+
 
     @RequestMapping("search")
     public String searchByCharacterName(@RequestParam("q") String searchValue, ModelMap modelMap) {
@@ -81,5 +92,14 @@ public class ComicController {
         modelMap.put("searchCharacter", searchCharacter);
         return "single";
     }
+
+    @RequestMapping("/issues")
+    @ResponseBody
+    public String displayIssueById(){
+        IssueWrapper issueWrapper = comicService.DisplayByIssue();
+        IssueResults results = issueWrapper.getResults();
+return results.toString();
+    }
+
 
 }
