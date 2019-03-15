@@ -11,7 +11,7 @@ public class Results {
     private String aliases;
     private String apiDetailsUrl;
     private String birth;
-   // private String CharacterEnemies;
+    private String CharacterEnemies;
     private String CharacterFriends;
    // private String creators;
     private String deck;
@@ -19,7 +19,7 @@ public class Results {
  //   private String firstAppearedInIssue;
     private String gender;
     private String id;
-   // private String image;
+    private String image;
    // private String issueCredits;
   //  private String issueDiedIn;
    // private String movies;
