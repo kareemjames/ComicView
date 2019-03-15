@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -64,7 +65,15 @@ public class ComicController {
 
         List<Character> carousel = new ArrayList<>();
         for (int i = 0; i <= 2; i++) {
-            if (allCharacters.size() == 1) {
+            if (allCharacters.size() == 0) {
+                Character noResultsCharacter = new Character();
+                Images noResultsImage = new Images();
+                noResultsCharacter.setName("No Results");
+                noResultsCharacter.setDate_added("No Results");
+                noResultsImage.setSmall_url("/images/blank.png");
+                noResultsCharacter.setImages(noResultsImage);
+                carousel.add(noResultsCharacter);
+            } else if (allCharacters.size() <= 2) {
                 carousel.add(allCharacters.get(0));
             } else {
                 carousel.add(allCharacters.get(i));
@@ -75,13 +84,6 @@ public class ComicController {
         return "index";
     }
 
-    //    @RequestMapping("/character")
-//    public String searchByCharacter(ModelMap modelMap) {
-//        CharacterWrapper characterWrapper = comicService.fetchSingleCharacterById();
-//        Results searchCharacter = characterWrapper.getResults();
-//        modelMap.put("searchCharacter", searchCharacter);
-//        return "single";
-//    }
     @RequestMapping("/character/{characterId}")
     public String searchByCharacter(@PathVariable String characterId, ModelMap modelMap) {
         comicService.setSearchCharacter(characterId);
