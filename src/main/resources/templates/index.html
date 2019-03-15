@@ -132,7 +132,7 @@
                                     <!--<small class="price">$19.00</small>-->
                                     <p th:text="${characters.deck}">Character bio</p>
                                     <!--<a href="cart.html" class="button">Add to cart</a>-->
-                                    <a th:href="@{/single}" class="button muted">Read Details</a>
+                                    <a th:href="@{'/character/4005-' + ${characters.id}}" class="button muted">Read Details</a>
                                 </div>
                             </div> <!-- .product -->
 
