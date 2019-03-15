@@ -71,7 +71,7 @@ public class ComicService {
         HttpHeaders headers = new HttpHeaders();
         headers.add("user-agent", "spring");
         HttpEntity entity = new HttpEntity(headers);
-        String displayIssueById = "https://comicvine.com/api/issue/?api_key=b51063865068ff4df9ab54f6c8b0282c8c9705c8&format=json";
+        String displayIssueById = "https://comicvine.com/api/issue/4050-1487/?api_key=b51063865068ff4df9ab54f6c8b0282c8c9705c8&format=json";
         ResponseEntity<IssueWrapper> response = restTemplate.exchange(displayIssueById, HttpMethod.GET, entity, IssueWrapper.class);
         return response.getBody();
     }

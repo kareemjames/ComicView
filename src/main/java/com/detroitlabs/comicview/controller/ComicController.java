@@ -37,13 +37,13 @@ public class ComicController {
     }
 
     @RequestMapping("/allissues")
-
-    public String displayAllIssues(ModelMap modelMap){
+@ResponseBody
+    public String displayAllIssues(){
         IssuesWrapper issuesWrapper = comicService.DisplayAllIssueData();
         List<IssueResults> allIssues = issuesWrapper.getResults();
-        modelMap.put("allIssues", allIssues);
-        return "issues";
+        return allIssues.toString();
     }
+
 
     @RequestMapping("search")
     public String searchByCharacterName(@RequestParam("q") String searchValue, ModelMap modelMap) {
@@ -66,7 +66,7 @@ public class ComicController {
     @ResponseBody
     public String displayIssueById(){
         IssueWrapper issueWrapper = comicService.DisplayByIssue();
-        Results results = issueWrapper.getResults();
+        IssueResults results = issueWrapper.getResults();
 return results.toString();
     }
 

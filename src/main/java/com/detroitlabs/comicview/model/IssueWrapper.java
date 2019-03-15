@@ -8,8 +8,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class IssueWrapper {
 
-    private Results results;
-
+    private IssueResults results;
 
 
     @Override
@@ -20,12 +19,12 @@ public class IssueWrapper {
     }
 
     @JsonProperty("results")
-    public Results getResults() {
+    public IssueResults getResults() {
         return results;
     }
 
     @JsonProperty("results")
-    public void setResults(Results results) {
+    public void setResults(IssueResults results) {
         this.results = results;
     }
 }

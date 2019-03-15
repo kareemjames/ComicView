@@ -13,17 +13,17 @@ public class IssueResults {
     private String coverDate;
     private String deck;
     private String description;
-   private String issueImages;
+   private IssueImage issueImages;
     private String name;
     private String siteDetailUrl;
 
     @JsonProperty("image")
-    public String getIssueImages() {
+    public IssueImage getIssueImages() {
         return issueImages;
     }
 
     @JsonProperty("image")
-    public void setIssueImages(String issueImages) {
+    public void setIssueImages(IssueImage issueImages) {
         this.issueImages = issueImages;
     }
 
