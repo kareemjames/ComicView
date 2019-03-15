@@ -77,7 +77,7 @@
                         <a href="cart.html" class="button">Add to cart</a>
                     </div>
 
-                    <img th:src="${allIssues.issueImages.small_url}" class="slide-image">
+                    <img th:src="${allIssues.images.small_url}" class="slide-image">
                 </div>
             </li>
             <li data-bg-image="dummy/slide-3.jpg">
@@ -90,7 +90,7 @@
                         <a href="cart.html" class="button">Add to cart</a>
                     </div>
 
-                    <img th:src="${allIssues[0].issueImages.small_url}" class="slide-image">
+                    <img th:src="${allIssues[0].images.small_url}" class="slide-image">
                 </div>
             </li>
         </ul> <!-- .slides -->
@@ -118,7 +118,7 @@
                                 <div class="inner-product">
                                     <div class="figure-image thumb">
                                         <a th:href="@{'/single/400-' + ${issueResults.description.id}}"><img
-                                                th:src="${issueResults.issueImages.thumb_url}" alt="Character Image"></a>
+                                                th:src="${issueResults.images.thumb_url}" alt="Character Image"></a>
                                     </div>
                                     <h3 class="product-title" th:text="${characters.real_name}"><a
                                             href="#">Character</a></h3>
