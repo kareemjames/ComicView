@@ -10,7 +10,7 @@ import java.util.List;
 @Component
 public class CharacterWrapper {
 
-    private Results results;
+    private Character results;
 
     @Override
     public String toString() {
@@ -20,12 +20,12 @@ public class CharacterWrapper {
     }
 
     @JsonProperty("results")
-    public Results getResults() {
+    public Character getResults() {
         return results;
     }
 
     @JsonProperty("results")
-    public void setResults(Results results) {
+    public void setResults(Character results) {
         this.results = results;
     }
 

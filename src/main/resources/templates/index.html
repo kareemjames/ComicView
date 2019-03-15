@@ -13,7 +13,7 @@
     <link href="fonts/lineo-icon/style.css" rel="stylesheet" type="text/css">
 
     <!-- Loading main css file -->
-    <link rel="stylesheet" th:href="@{style.css}">
+    <link rel="stylesheet" th:href="@{/style.css}">
 
     <!--[if lt IE 9]>
     <script src="js/ie-support/html5.js"></script>
@@ -21,7 +21,6 @@
     <![endif]-->
 
 </head>
-
 
 <body class="slider-collapse">
 
@@ -69,7 +68,7 @@
 
                         <p th:text="${carousel[0].deck}"></p>
 
-                        <a href="cart.html" class="button">Add to cart</a>
+                        <a th:href="@{'/character/4005-' + ${carousel[0].id}}" class="button">More Information</a>
                     </div>
 
                     <img th:src="${carousel[0].images.small_url}" class="slide-image">
@@ -82,7 +81,7 @@
                         <!--<small class="slide-subtitle">$190.00</small>-->
 
                         <p th:text="${carousel[1].deck}"></p>
-                        <a href="cart.html" class="button">Add to cart</a>
+                        <a th:href="@{'/character/4005-' + ${carousel[1].id}}" class="button">More Information</a>
                     </div>
 
                     <img th:src="${carousel[1].images.small_url}" class="slide-image">
@@ -95,7 +94,7 @@
                         <!--<small class="slide-subtitle">$190.00</small>-->
 
                         <p th:text="${carousel[2].deck}"></p>
-                        <a href="cart.html" class="button">Add to cart</a>
+                        <a th:href="@{'/character/4005-' + ${carousel[2].id}}" class="button">More Information</a>
                     </div>
 
                     <img th:src="${carousel[2].images.small_url}" class="slide-image">
@@ -125,8 +124,8 @@
                             <div class="product" th:each="characters : ${allCharacters}">
                                 <div class="inner-product">
                                     <div class="figure-image thumb">
-                                        <a th:href="@{'/single/400-' + ${characters.firstAppearedIn.id}}"><img
-                                                th:src="${characters.images.thumb_url}" alt="Character Image"></a>
+                                        <a th:href="@{'/character/4005-' + ${characters.id}}"><img
+                                                 th:src="${characters.images.original_url}" alt="Character Image"></a>
                                     </div>
                                     <h3 class="product-title" th:text="${characters.real_name}"><a
                                             href="#">Character</a></h3>
