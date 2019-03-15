@@ -8,6 +8,7 @@ import com.detroitlabs.comicview.service.ComicService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -62,16 +63,23 @@ public class ComicController {
         }
         modelMap.put("carousel", carousel);
 
-        return"index";
+        return "index";
     }
 
-    @RequestMapping("/character")
-    @ResponseBody
-    public String searchByCharacter() {
+    //    @RequestMapping("/character")
+//    public String searchByCharacter(ModelMap modelMap) {
+//        CharacterWrapper characterWrapper = comicService.fetchSingleCharacterById();
+//        Results searchCharacter = characterWrapper.getResults();
+//        modelMap.put("searchCharacter", searchCharacter);
+//        return "single";
+//    }
+    @RequestMapping("/character/{characterId}")
+    public String searchByCharacter(@PathVariable String characterId, ModelMap modelMap) {
+        comicService.setSearchCharacter(characterId);
         CharacterWrapper characterWrapper = comicService.fetchSingleCharacterById();
-        Results searchCharacter = characterWrapper.getResults();
-        return searchCharacter.toString();
+        Character searchCharacter = characterWrapper.getResults();
+        modelMap.put("searchCharacter", searchCharacter);
+        return "single";
     }
-
 
 }
