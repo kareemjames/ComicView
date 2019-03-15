@@ -31,7 +31,7 @@
                 <img th:src="@{/images/logo.png}" alt="" class="logo">
                 <div class="logo-text">
                     <h1 class="site-title">Comic View</h1>
-                    <small class="site-description">Remember to put something here.</small>
+                    <small class="site-description">Where All Your Comic Dreams Come True.</small>
                 </div>
             </a> <!-- #branding -->
 
@@ -44,7 +44,7 @@
                 <ul class="menu">
                     <li class="menu-item home current-menu-item"><a href="index.html"><i class="icon-home"></i></a></li>
                     <li class="menu-item"><a href="products.html">Cart</a></li>
-                    <li class="menu-item"><a href="products.html">Promotions</a></li>
+                    <li class="menu-item"><a th:href="@{/allissues}">Show All Issues</a></li>
                 </ul> <!-- .menu -->
                 <div class="search-form">
                     <form action="/search" method="get">
@@ -102,7 +102,7 @@
                     </div>
                 </div>
 
-                !-- .product-list -->
+
             </section>
 
         </div>
