@@ -10,8 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import javax.xml.ws.RequestWrapper;
-import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -27,8 +25,6 @@ public class ComicController {
 
     @Autowired
     CharacterWrapper characterWrapper;
-    @Autowired
-    IssueImage issueImage;
 
 
 
@@ -38,6 +34,15 @@ public class ComicController {
         List<Character> allCharacters = cw.getResults();
         modelMap.put("allCharacters", allCharacters);
         return "index";
+    }
+
+    @RequestMapping("/allissues")
+
+    public String displayAllIssues(ModelMap modelMap){
+        IssuesWrapper issuesWrapper = comicService.DisplayAllIssueData();
+        List<IssueResults> allIssues = issuesWrapper.getResults();
+        modelMap.put("allIssues", allIssues);
+        return "issues";
     }
 
     @RequestMapping("search")

@@ -1,9 +1,9 @@
 package com.detroitlabs.comicview.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import org.springframework.stereotype.Component;
 
-@Component
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class IssueImage {
     private String iconUrl;
     private String medium_url;

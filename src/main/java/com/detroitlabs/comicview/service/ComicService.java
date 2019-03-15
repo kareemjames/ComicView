@@ -1,9 +1,7 @@
 package com.detroitlabs.comicview.service;
 
+import com.detroitlabs.comicview.model.*;
 import com.detroitlabs.comicview.model.Character;
-import com.detroitlabs.comicview.model.CharacterWrapper;
-import com.detroitlabs.comicview.model.ComicWrapper;
-import com.detroitlabs.comicview.model.IssueWrapper;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -28,6 +26,17 @@ public class ComicService {
         ResponseEntity<ComicWrapper> response = restTemplate.exchange(fetchAllCharactersUrl, HttpMethod.GET, entity, ComicWrapper.class);
         return response.getBody();
     }
+
+    public IssuesWrapper DisplayAllIssueData(){
+        RestTemplate restTemplate = new RestTemplate();
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("user-agent", "spring");
+        HttpEntity entity = new HttpEntity(headers);
+        String fetchAllIssues = "https://www.comicvine.com/api/issues?api_key=b51063865068ff4df9ab54f6c8b0282c8c9705c8&format=json&limit=500";
+        ResponseEntity<IssuesWrapper> response = restTemplate.exchange(fetchAllIssues, HttpMethod.GET, entity, IssuesWrapper.class);
+        return response.getBody();
+    }
+
 
     public CharacterWrapper fetchSingleCharacterById(){
         RestTemplate restTemplate = new RestTemplate();
@@ -62,10 +71,11 @@ public class ComicService {
         HttpHeaders headers = new HttpHeaders();
         headers.add("user-agent", "spring");
         HttpEntity entity = new HttpEntity(headers);
-        String displayIssueById = "https://comicvine.com/api/issue/4000-13453/?api_key=b51063865068ff4df9ab54f6c8b0282c8c9705c8&format=json";
+        String displayIssueById = "https://comicvine.com/api/issue/?api_key=b51063865068ff4df9ab54f6c8b0282c8c9705c8&format=json";
         ResponseEntity<IssueWrapper> response = restTemplate.exchange(displayIssueById, HttpMethod.GET, entity, IssueWrapper.class);
         return response.getBody();
     }
+
 
     public String getSearchName() {
         return searchName;

@@ -13,10 +13,19 @@ public class IssueResults {
     private String coverDate;
     private String deck;
     private String description;
-   private String IssueImage;
+   private String issueImages;
     private String name;
     private String siteDetailUrl;
 
+    @JsonProperty("image")
+    public String getIssueImages() {
+        return issueImages;
+    }
+
+    @JsonProperty("image")
+    public void setIssueImages(String issueImages) {
+        this.issueImages = issueImages;
+    }
 
     @JsonProperty("api_detail_url")
     public String getApiDetailUrl() {
@@ -80,10 +89,13 @@ public class IssueResults {
     @Override
     public String toString() {
         return "IssueResults{" +
-                "apiDetailUrl='" + apiDetailUrl + '\'' +
+                "aliases='" + aliases + '\'' +
+                ", apiDetailUrl='" + apiDetailUrl + '\'' +
+                ", characterCredits='" + characterCredits + '\'' +
                 ", coverDate='" + coverDate + '\'' +
                 ", deck='" + deck + '\'' +
                 ", description='" + description + '\'' +
+                ", images='" + issueImages + '\'' +
                 ", name='" + name + '\'' +
                 ", siteDetailUrl='" + siteDetailUrl + '\'' +
                 '}';
