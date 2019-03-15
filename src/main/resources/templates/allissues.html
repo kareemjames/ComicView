@@ -59,7 +59,7 @@
     <div class="breadcrumbs">
         <div class="container">
             <a th:href="@{/}">Home</a>
-            <span th:text="${searchCharacter.name}"></span>
+            <!--<span th:text="${searchCharacter.name}"></span>-->
         </div>
     </div>
 </div> <!-- .container -->
@@ -67,60 +67,43 @@
 
 <main class="main-content">
     <div class="container">
-        <div class="page">
 
-            <div class="entry-content">
                 <div class="row">
                     <div class="col-sm-6 col-md-4">
                         <div class="product-images">
-                            <figure class="large-image">
-                                <a href="#"><img th:src="${searchCharacter.images.original_url}"></a>
-                            </figure>
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-8">
-                        <h2 th:text="${searchCharacter.name}" class="entry-title"></h2>
-                        <div id="singleCharacter">
-                            <p th:remove="tag" th:utext="${searchCharacter.description}"></p>
+                        <!--<h2 th:text="${searchCharacter.name}" class="entry-title"></h2>-->
+                        <div>
+                            <!--<p th:remove="tag" th:utext="${searchCharacter.description}"></p>-->
 
-                            <div class="addtocart-bar">
-                                <form action="#">
-                                    <!--<label>Quantity</label>-->
-                                    <!--<select name="#">-->
-                                    <!--<option value="1">1</option>-->
-                                    <!--<option value="2">2</option>-->
-                                    <!--<option value="3">3</option>-->
-                                    <!--</select>-->
-                                    <input type="submit" value="Add to cart">
-                                </form>
-
-                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <!--<section>-->
-                <!--<header>-->
-                    <!--<h2 class="section-title">Similiar Product</h2>-->
-                <!--</header>-->
-                <!--<div class="product-list">-->
-                    <!--<div class="product" th:each="issues : ${allIssues}">-->
-                        <!--<div class="inner-product">-->
-                            <!--<div class="figure-image">-->
-                                <!--<img th:src="${issues.images.original_url}" alt="Character Image"></a>-->
-                            <!--</div>-->
-                            <!--<h3 class="product-title" th:text="${issues.name}"><a-->
-                                    <!--href="#">Character</a></h3>-->
-                            <!--&lt;!&ndash;<small class="price">$19.00</small>&ndash;&gt;-->
-                            <!--<p th:text="${issues.deck}">Character bio</p>-->
-                            <!--&lt;!&ndash;<a href="cart.html" class="button">Add to cart</a>&ndash;&gt;-->
-                            <!--<a th:href="@{/single}" class="button muted">Read Details</a>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
 
-                <!--!&#45;&#45; .product-list &ndash;&gt;-->
-            <!--</section>-->
+            <section>
+                <header>
+                    <h2 class="section-title">Similiar Product</h2>
+                </header>
+                <div class="product-list">
+                    <div class="product" th:each="issues : ${allIssues}">
+                        <div class="inner-product">
+                            <div class="figure-image">
+                                <img th:src="${issues.images.original_url}" alt="Character Image"></a>
+                            </div>
+                            <h3 class="product-title" th:text="${issues.name}"><a
+                                    href="#">Character</a></h3>
+                            <!--<small class="price">$19.00</small>-->
+                            <p th:text="${issues.deck}">Character bio</p>
+                            <!--<a href="cart.html" class="button">Add to cart</a>-->
+                            <a th:href="@{/single}" class="button muted">Read Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                !-- .product-list -->
+            </section>
 
         </div>
     </div> <!-- .container -->

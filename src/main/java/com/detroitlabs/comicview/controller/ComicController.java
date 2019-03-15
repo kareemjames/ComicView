@@ -48,11 +48,11 @@ public class ComicController {
     }
 
     @RequestMapping("/allissues")
-@ResponseBody
-    public String displayAllIssues(){
+    public String displayAllIssues(ModelMap modelMap){
         IssuesWrapper issuesWrapper = comicService.DisplayAllIssueData();
         List<IssueResults> allIssues = issuesWrapper.getResults();
-        return allIssues.toString();
+        modelMap.put("allIssues", allIssues);
+        return "allissues";
     }
 
 
@@ -90,6 +90,10 @@ public class ComicController {
         CharacterWrapper characterWrapper = comicService.fetchSingleCharacterById();
         Character searchCharacter = characterWrapper.getResults();
         modelMap.put("searchCharacter", searchCharacter);
+
+        IssuesWrapper issuesWrapper = comicService.DisplayAllIssueData();
+        List<IssueResults> allIssues = issuesWrapper.getResults();
+        modelMap.put("allIssues", allIssues);
         return "single";
     }
 

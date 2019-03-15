@@ -13,18 +13,18 @@ public class IssueResults {
     private String coverDate;
     private String deck;
     private String description;
-   private IssueImage issueImages;
+   private Images images;
     private String name;
     private String siteDetailUrl;
 
     @JsonProperty("image")
-    public IssueImage getIssueImages() {
-        return issueImages;
+    public Images getImages() {
+        return images;
     }
 
     @JsonProperty("image")
-    public void setIssueImages(IssueImage issueImages) {
-        this.issueImages = issueImages;
+    public void setImages(Images images) {
+        this.images = images;
     }
 
     @JsonProperty("api_detail_url")
@@ -95,7 +95,7 @@ public class IssueResults {
                 ", coverDate='" + coverDate + '\'' +
                 ", deck='" + deck + '\'' +
                 ", description='" + description + '\'' +
-                ", images='" + issueImages + '\'' +
+                ", images='" + images + '\'' +
                 ", name='" + name + '\'' +
                 ", siteDetailUrl='" + siteDetailUrl + '\'' +
                 '}';
